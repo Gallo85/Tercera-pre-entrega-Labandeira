@@ -1,0 +1,27 @@
+<!-- mi_app/templates/mi_app/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La casa del Libro</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'agregar_categoria' %}">Agregar Categoría</a></li>
+                <li><a href="{% url 'agregar_autor' %}">Agregar Autor</a></li>
+                <li><a href="{% url 'agregar_libro' %}">Agregar Libro</a></li>
+                <li><a href="{% url 'agregar_cliente' %}">Agregar Cliente</a></li>
+                <li><a href="{% url 'buscar_libro' %}">Buscar Libro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

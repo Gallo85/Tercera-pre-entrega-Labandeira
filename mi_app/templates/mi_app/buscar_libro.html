@@ -1,0 +1,19 @@
+<!-- mi_app/templates/mi_app/buscar_libro.html -->
+{% extends 'mi_app/base.html' %}
+
+{% block content %}
+<h2>Buscar Libro</h2>
+<form method="GET">
+    <input type="text" name="query" value="{{ query }}" placeholder="Buscar libro">
+    <button type="submit">Buscar</button>
+</form>
+
+<h3>Resultados</h3>
+<ul>
+    {% for libro in libros %}
+        <li>{{ libro.titulo }} - {{ libro.autor }} - {{ libro.categoria }}</li>
+    {% empty %}
+        <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
